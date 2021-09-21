@@ -151,3 +151,26 @@ for (let i = 0; i < cartItems.length; i++) {
     cartItems[i].parentElement.replaceChild(newItem, cartItems[i]);
   }
 }
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Задание 6
+Напишите программу для создания списка задач, которые будет вводить пользователь:
+в
+Для каждого пункта:
+Запрашивайте содержимое пункта у пользователя с помощью prompt.
+Создавайте пункт и добавляйте его к UL.
+Процесс прерывается, когда пользователь нажимает "Отмена" или вводит пустую строку.*/
+
+function activateToDoList() {
+  let todoListContainer = document.querySelector(".todoListContainer");
+  let userInput = true;
+  while (userInput != null && userInput != false) {
+    userInput = prompt("Make an input to the todo-list: ");
+    if (userInput != false) {
+      let todo = document.createElement("li");
+      todo.textContent = userInput;
+      todoListContainer.appendChild(todo);
+    }
+  }
+}
